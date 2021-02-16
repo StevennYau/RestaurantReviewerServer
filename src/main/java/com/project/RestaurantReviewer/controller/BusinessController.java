@@ -18,6 +18,11 @@ public class BusinessController {
         return businessService.saveBusiness(business);
     }
 
+    @PostMapping("/addBusinesses")
+    public List<Business> addBusinesses(@RequestBody List<Business> businesses){
+        return businessService.saveBusinesses(businesses);
+    }
+
     //get
     @GetMapping("/businesses")
     public List<Business> findAllBusinesses(){
