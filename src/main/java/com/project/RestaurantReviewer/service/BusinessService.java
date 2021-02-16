@@ -18,6 +18,10 @@ public class BusinessService {
         return businessRepository.save(business);
     }
 
+    public List<Business> saveBusinesses(List<Business> businesses){
+        return businessRepository.saveAll(businesses);
+    }
+
     //get
     public List<Business> getBusinesses(){
         return businessRepository.findAll();
