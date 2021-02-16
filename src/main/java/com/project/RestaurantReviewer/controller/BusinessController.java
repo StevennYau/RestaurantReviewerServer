@@ -38,4 +38,16 @@ public class BusinessController {
     public Business findBusinessByName(@PathVariable String name){
         return businessService.getBusinessByName(name);
     }
+
+    //delete
+    @DeleteMapping("/deleteBusiness/{id}")
+    public String deleteBusiness(@PathVariable int id){
+        return businessService.deleteBusiness(id);
+    }
+
+    //put
+    @PutMapping("/updateBusiness")
+    public Business updateBusiness(@RequestBody Business business){
+        return businessService.updateBusiness(business);
+    }
 }
