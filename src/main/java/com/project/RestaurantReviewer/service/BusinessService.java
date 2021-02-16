@@ -23,7 +23,7 @@ public class BusinessService {
         return businessRepository.findAll();
     }
 
-    public Business getBusiness(int id){
+    public Business getBusinessById(int id){
         return businessRepository.findById(id).orElse(null);
     }
 
