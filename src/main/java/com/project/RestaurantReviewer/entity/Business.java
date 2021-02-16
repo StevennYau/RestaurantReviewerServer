@@ -22,6 +22,21 @@ public class Business {
     private int stars;
     private boolean is_open;
 
+    public Business() {
+    }
+
+    public Business(String name, String address, String city, String state, String postal_code, int latitude, int longitude, int stars, boolean is_open) {
+        this.name = name;
+        Address = address;
+        this.city = city;
+        this.state = state;
+        this.postal_code = postal_code;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.stars = stars;
+        this.is_open = is_open;
+    }
+
     public long getId() {
         return id;
     }
