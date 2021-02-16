@@ -13,7 +13,7 @@ public class Business {
     @GeneratedValue
     private long id;
     private String name;
-    private String Address;
+    private String address;
     private String city;
     private String state;
     private String postal_code;
@@ -27,7 +27,7 @@ public class Business {
 
     public Business(String name, String address, String city, String state, String postal_code, int latitude, int longitude, int stars, boolean is_open) {
         this.name = name;
-        Address = address;
+        this.address = address;
         this.city = city;
         this.state = state;
         this.postal_code = postal_code;
