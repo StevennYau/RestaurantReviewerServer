@@ -17,15 +17,15 @@ public class Business {
     private String city;
     private String state;
     private String postal_code;
-    private int latitude;
-    private int longitude;
+    private double latitude;
+    private double longitude;
     private int stars;
     private boolean is_open;
 
     public Business() {
     }
 
-    public Business(String name, String address, String city, String state, String postal_code, int latitude, int longitude, int stars, boolean is_open) {
+    public Business(String name, String address, String city, String state, String postal_code, double latitude, double longitude, int stars, boolean is_open) {
         this.name = name;
         this.address = address;
         this.city = city;
@@ -85,19 +85,19 @@ public class Business {
         this.postal_code = postal_code;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
