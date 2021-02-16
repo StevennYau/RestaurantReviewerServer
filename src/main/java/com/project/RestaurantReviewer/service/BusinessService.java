@@ -35,4 +35,29 @@ public class BusinessService {
         return businessRepository.findByName(name);
     }
 
+    //delete
+    public String deleteBusiness(int id){
+        businessRepository.deleteById(id);
+        return "business " + id + " has been removed";
+    }
+
+    //update
+    public Business updateBusiness(Business business){
+
+        Business existingBusiness = businessRepository.findById((int) business.getId()).orElseThrow(() -> new IllegalStateException(
+                "business with id " + business.getId() + " does not exist"
+        ));
+
+        existingBusiness.setName(business.getName());
+        existingBusiness.setAddress(business.getAddress());
+        existingBusiness.setCity(business.getCity());
+        existingBusiness.setState(business.getState());
+        existingBusiness.setPostal_code(business.getPostal_code());
+        existingBusiness.setLatitude(business.getLatitude());
+        existingBusiness.setLongitude(business.getLongitude());
+        existingBusiness.setStars(business.getStars());
+        existingBusiness.setIs_open(business.isIs_open());
+        return businessRepository.save(existingBusiness); // save new business
+    }
+
 }
