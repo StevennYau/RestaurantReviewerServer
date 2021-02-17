@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- <pattern>%d{HH:mm:ss,SSS} [%t] %c{0}:%L - %m%n</pattern> -->
+            <!-- <pattern>[%5p] [%t %d{hh:mm:ss}] (%F:%M:%L) (%c) %m%n</pattern>  -->
+            <pattern>%d [%t] %5p %F:%L - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DAILY_FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/Users/stevenyau/Desktop/logs/RestaurantReviewer.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>/Users/stevenyau/Desktop/logs/RestaurantReviewer.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <!-- keep # days' worth of history -->
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <!-- <pattern>%d [%t] %5p %logger{0}:%L - %m%n</pattern> -->
+            <!-- <pattern>%d [%t] %5p %logger{0}%F:%M:%L - %m%n</pattern>  -->
+            <pattern>%d [%t] %5p %F:%L - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org" level="ERROR" />
+    <logger name="org.springframework" level="ERROR" />
+    <logger name="org.springframework.security" level="INFO" />
+    <logger name="org.hibernate" level="ERROR" />
+    <logger name="org.hibernate.SQL" level="ERROR" />
+    <logger name="com.fasterxml.jackson" level="ERROR" />
+    <logger name="org.apache" level="ERROR" />
+    <logger name="net.sf.jasperreports" level="ERROR" />
+    <logger name="ch.qos" level="ERROR" />
+    <logger name="ch.qos.logback" level="ERROR" />
+    <logger name="net.sf.ehcache" level="ERROR" />
+    <logger name="com.cibc.wss.diportal" level="DEBUG" />
+    <logger name="com.solacesystems" level="ERROR" />
+
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="DAILY_FILE" />
+    </root>
+</configuration>
