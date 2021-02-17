@@ -2,6 +2,7 @@ package com.project.RestaurantReviewer.controller;
 
 import com.project.RestaurantReviewer.entity.Business;
 import com.project.RestaurantReviewer.service.BusinessService;
+import com.project.RestaurantReviewer.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 @RestController
 public class BusinessController {
+
     @Autowired
     private BusinessService businessService;
 
@@ -50,4 +52,6 @@ public class BusinessController {
     public Business updateBusiness(@RequestBody Business business){
         return businessService.updateBusiness(business);
     }
+
+
 }
