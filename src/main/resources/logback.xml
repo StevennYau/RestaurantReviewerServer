@@ -40,7 +40,7 @@
     <logger name="com.solacesystems" level="ERROR" />
 
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="DAILY_FILE" />
     </root>
