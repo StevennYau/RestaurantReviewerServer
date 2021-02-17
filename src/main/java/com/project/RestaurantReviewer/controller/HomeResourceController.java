@@ -1,10 +1,10 @@
-package com.project.RestaurantReviewer;
+package com.project.RestaurantReviewer.controller;
 
 import com.project.RestaurantReviewer.entity.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class HomeResource {
+public class HomeResourceController {
 
     /*@RequestMapping(value = "/username", method = RequestMethod.GET)
     @ResponseBody
