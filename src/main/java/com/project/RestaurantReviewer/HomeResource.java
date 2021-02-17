@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class HomeResource {
 
-    @RequestMapping(value = "/username", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/username", method = RequestMethod.GET)
     @ResponseBody
     public String currentUserName(User user){
         return user.getUserName();
-    }
+    }*/
 
     @GetMapping("/")
     public String home() {
