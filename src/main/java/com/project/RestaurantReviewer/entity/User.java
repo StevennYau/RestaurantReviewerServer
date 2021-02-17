@@ -3,15 +3,25 @@ package com.project.RestaurantReviewer.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User")
+@Table(name = "USER")
 public class User {
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column(name="userName")
     private String userName;
+
+    @Column(name="password")
     private String password;
-    private boolean active;
+
+    @Column(name="active")
+    private String active;
+
+    @Column(name="roles")
     private String roles;
+
 
     public int getId() {
         return id;
@@ -37,11 +47,11 @@ public class User {
         this.password = password;
     }
 
-    public boolean isActive() {
+    public String getActive() {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(String active) {
         this.active = active;
     }
 
