@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.Optional;
 
 
@@ -26,6 +27,12 @@ public class MyUserDetailsService implements UserDetailsService {
     UserRepository userRepository;
 
     private static Logger log = LoggerFactory.getLogger(UserController.class);
+
+    @PostConstruct
+    public void init() {
+        User user = userRepository.findUserById(2);
+        log.info("user = " + user.getUserName());
+    }
 
 
 
@@ -44,7 +51,8 @@ public class MyUserDetailsService implements UserDetailsService {
     public String getLoggedInId(String userName) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         // log.debug("authentication="+authentication);
-        Optional<User> test = userRepository.findIdByUser(userName);
+        int test = userRepository.findIdByUser(userName);
+
         log.info("ID ID ID");
         log.info("ID ID ID");
         log.info("ID ID ID");
