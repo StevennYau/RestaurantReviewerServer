@@ -44,19 +44,20 @@ public class BusinessService {
     //update
     public Business updateBusiness(Business business){
 
-        Business existingBusiness = businessRepository.findById((int) business.getId()).orElseThrow(() -> new IllegalStateException(
+        Business existingBusiness = businessRepository.findById(business.getId()).orElseThrow(() -> new IllegalStateException(
                 "business with id " + business.getId() + " does not exist"
         ));
 
         existingBusiness.setName(business.getName());
-        existingBusiness.setAddress(business.getAddress());
-        existingBusiness.setCity(business.getCity());
-        existingBusiness.setState(business.getState());
-        existingBusiness.setPostal_code(business.getPostal_code());
-        existingBusiness.setLatitude(business.getLatitude());
-        existingBusiness.setLongitude(business.getLongitude());
-        existingBusiness.setStars(business.getStars());
-        existingBusiness.setIs_open(business.isIs_open());
+        existingBusiness.setAlias(business.getAlias());
+        existingBusiness.setImage_url(business.getImage_url());
+        existingBusiness.setIs_closed(business.isIs_closed());
+        existingBusiness.setUrl(business.getUrl());
+        existingBusiness.setReview_count(business.getReview_count());
+        existingBusiness.setRating(business.getRating());
+        existingBusiness.setPhone(business.getPhone());
+        existingBusiness.setAddress_id(business.getAddress_id());
+
         return businessRepository.save(existingBusiness); // save new business
     }
 
