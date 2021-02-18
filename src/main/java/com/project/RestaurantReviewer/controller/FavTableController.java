@@ -53,9 +53,9 @@ public class FavTableController {
         return favTableService.getAllRows();
     }
 
-    @GetMapping("/getFavRowByName/{name}")
+    /*@GetMapping("/getFavRowByName/{name}")
     public FavTable getFavRowByName(@PathVariable String name){
         return favTableService.getRowByName(name);
-    }
+    }*/
 
 }
