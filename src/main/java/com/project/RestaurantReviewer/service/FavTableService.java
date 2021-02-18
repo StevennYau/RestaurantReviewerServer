@@ -55,7 +55,7 @@ public class FavTableService {
         return favTableRepository.findAll();
     }
 
-    public FavTable getRowByName(String name){
+    /*public FavTable getRowByName(String name){
         return favTableRepository.findByName(name);
-    }
+    }*/
 }
