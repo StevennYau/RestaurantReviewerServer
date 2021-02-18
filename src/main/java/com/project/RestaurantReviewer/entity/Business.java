@@ -12,37 +12,46 @@ public class Business {
     @Id
     @GeneratedValue
     private int id;
+    private String alias;
     private String name;
-    private String address;
-    private String city;
-    private String state;
-    private String postal_code;
-    private double latitude;
-    private double longitude;
-    private int stars;
-    private boolean is_open;
+    private String image_url;
+    private boolean is_closed;
+    private String url;
+    private int review_count;
+    private int rating;
+    private String phone;
+    private int address_id;
 
     public Business() {
     }
 
-    public Business(String name, String address, String city, String state, String postal_code, double latitude, double longitude, int stars, boolean is_open) {
+    public Business(int id, String alias, String name, String image_url, boolean is_closed, String url, int review_count, int rating, String phone, int address_id) {
+        this.id = id;
+        this.alias = alias;
         this.name = name;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.postal_code = postal_code;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.stars = stars;
-        this.is_open = is_open;
+        this.image_url = image_url;
+        this.is_closed = is_closed;
+        this.url = url;
+        this.review_count = review_count;
+        this.rating = rating;
+        this.phone = phone;
+        this.address_id = address_id;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     public String getName() {
@@ -53,67 +62,59 @@ public class Business {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getImage_url() {
+        return image_url;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
     }
 
-    public String getCity() {
-        return city;
+    public boolean isIs_closed() {
+        return is_closed;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setIs_closed(boolean is_closed) {
+        this.is_closed = is_closed;
     }
 
-    public String getState() {
-        return state;
+    public String getUrl() {
+        return url;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getPostal_code() {
-        return postal_code;
+    public int getReview_count() {
+        return review_count;
     }
 
-    public void setPostal_code(String postal_code) {
-        this.postal_code = postal_code;
+    public void setReview_count(int review_count) {
+        this.review_count = review_count;
     }
 
-    public double getLatitude() {
-        return latitude;
+    public int getRating() {
+        return rating;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
-    public double getLongitude() {
-        return longitude;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public int getStars() {
-        return stars;
+    public int getAddress_id() {
+        return address_id;
     }
 
-    public void setStars(int stars) {
-        this.stars = stars;
-    }
-
-    public boolean isIs_open() {
-        return is_open;
-    }
-
-    public void setIs_open(boolean is_open) {
-        this.is_open = is_open;
+    public void setAddress_id(int address_id) {
+        this.address_id = address_id;
     }
 }
