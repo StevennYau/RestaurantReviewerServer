@@ -22,7 +22,6 @@ public class User {
     @Column(name="roles")
     private String roles;
 
-
     public int getId() {
         return id;
     }
